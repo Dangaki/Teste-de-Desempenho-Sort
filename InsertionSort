@@ -39,4 +39,7 @@ int main() {
 
   cout<<"Vetor sorteado: "<<endl;
   desenhar_vetor(vetor, TAMANHO);
+  
+  system ("pause");
+  return 0;
 }
