@@ -52,8 +52,12 @@ int main()
   
     cout<<("Vetor: \n"); 
     desenhar_vetor(vetor, TAMANHO); 
+    
     quickSort(vetor, 0, TAMANHO - 1);
+    
     cout << endl << "Vetor sorteado: \n"; 
     desenhar_vetor(vetor, TAMANHO); 
-    return 0; 
+    
+    system ("pause");
+    return 0;
 }
