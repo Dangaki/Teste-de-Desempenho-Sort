@@ -1,0 +1,39 @@
+#include "stdafx.h"
+#include <iostream>
+#include "string"
+
+using  namespace std;
+
+void bubble_sort(int vetor[], int TAMANHO){
+   for (int counter = 0; counter < TAMANHO-1; counter++){
+    for(int counter2 = 0; counter2 < TAMANHO-1; counter2++){
+        if(vetor[counter2]>vetor[counter2+1]){
+            int auxiliar=vetor[counter2];
+            vetor[counter2]=vetor[counter2+1];
+            vetor[counter2+1]=auxiliar;
+        }
+    }
+  }
+}
+
+void desenhar_vetor(int vetor[], int TAMANHO) 
+{  
+    for (int counter=0; counter < TAMANHO; counter++){ 
+        cout << vetor[counter] << " ";
+    }
+    cout<<("\n"); 
+} 
+
+int main() {
+  int TAMANHO=10;
+    int vetor[]={10,5,4,2,7,1,3,8,6,9};
+
+  cout<<"Vetor: "<<endl;
+  desenhar_vetor(vetor, TAMANHO);
+  cout<<endl;
+
+  bubble_sort(vetor, TAMANHO);
+
+  cout<<"Vetor sorteado: "<<endl;
+  desenhar_vetor(vetor, TAMANHO);
+}
