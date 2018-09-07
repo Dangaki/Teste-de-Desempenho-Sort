@@ -84,5 +84,6 @@ int main()
 	desenhar_vetor(vetor, TAMANHO);
 	cout << endl;
 
-	system("pause");
+	system ("pause");
+  	return 0;
 }
