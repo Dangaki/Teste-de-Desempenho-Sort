@@ -1,0 +1,59 @@
+#include "stdafx.h"
+#include <iostream>
+#include "string"
+
+using  namespace std;
+#include<stdio.h> 
+
+void swap(int* a, int* b) 
+{ 
+    int t = *a; 
+    *a = *b; 
+    *b = t; 
+} 
+
+int partition (int vetor[], int menor, int maior) 
+{ 
+    int pivot = vetor[maior];  
+    int i = (menor - 1); 
+  
+    for (int j = menor; j <= maior- 1; j++) 
+    { 
+        if (vetor[j] <= pivot) 
+        { 
+            i++;
+            swap(&vetor[i], &vetor[j]); 
+        } 
+    } 
+    swap(&vetor[i + 1], &vetor[maior]); 
+    return (i + 1); 
+} 
+  
+void quickSort(int vetor[], int menor, int maior) 
+{ 
+    if (menor < maior) 
+    { 
+        int pi = partition(vetor, menor, maior); 
+        quickSort(vetor, menor, pi - 1); 
+        quickSort(vetor, pi + 1, maior); 
+    } 
+} 
+  
+void desenhar_vetor(int vetor[], int TAMANHO) 
+{ 
+    for (int i=0; i < TAMANHO; i++) 
+        cout << vetor[i] << " "; 
+} 
+
+int main() 
+{ 
+    int vetor[] = {10,5,4,2,7,1,3,8,6,9}; 
+    int TAMANHO = 10; 
+  
+    cout<<("Vetor: \n"); 
+    desenhar_vetor(vetor, TAMANHO); 
+    quickSort(vetor, 0, TAMANHO - 1);
+    cout << endl << "Vetor sorteado: \n"; 
+    desenhar_vetor(vetor, TAMANHO); 
+    return 0; 
+}
